@@ -26,7 +26,7 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public List<Writer> List()
         {
-            throw new NotImplementedException();
+           return _object.ToList();
         }
 
         public List<Writer> List(Expression<Func<Writer, bool>> filter)
