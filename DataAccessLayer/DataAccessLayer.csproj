@@ -52,10 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -63,10 +66,13 @@
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WriterRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202109181832039_mig1.cs" />
     <Compile Include="Migrations\202109181832039_mig1.designer.cs">
@@ -99,6 +105,22 @@
     <Compile Include="Migrations\202109221833236_mig_heading_addstatus.cs" />
     <Compile Include="Migrations\202109221833236_mig_heading_addstatus.designer.cs">
       <DependentUpon>202109221833236_mig_heading_addstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109231048386_mig_addmessageclass.cs" />
+    <Compile Include="Migrations\202109231048386_mig_addmessageclass.designer.cs">
+      <DependentUpon>202109231048386_mig_addmessageclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109231529316_mig_contactadddate.cs" />
+    <Compile Include="Migrations\202109231529316_mig_contactadddate.designer.cs">
+      <DependentUpon>202109231529316_mig_contactadddate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109231727126_mig_addimage_file.cs" />
+    <Compile Include="Migrations\202109231727126_mig_addimage_file.designer.cs">
+      <DependentUpon>202109231727126_mig_addimage_file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109231809134_mig_addadmin.cs" />
+    <Compile Include="Migrations\202109231809134_mig_addadmin.designer.cs">
+      <DependentUpon>202109231809134_mig_addadmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +160,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109221833236_mig_heading_addstatus.resx">
       <DependentUpon>202109221833236_mig_heading_addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231048386_mig_addmessageclass.resx">
+      <DependentUpon>202109231048386_mig_addmessageclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231529316_mig_contactadddate.resx">
+      <DependentUpon>202109231529316_mig_contactadddate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231727126_mig_addimage_file.resx">
+      <DependentUpon>202109231727126_mig_addimage_file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109231809134_mig_addadmin.resx">
+      <DependentUpon>202109231809134_mig_addadmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
