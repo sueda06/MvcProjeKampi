@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,36 @@ namespace MvcProjeKampi.Controllers
     public class WriterPanelContentController : Controller
     {
         ContentManager contentManager = new ContentManager(new EfContentDal());
-        // GET: WriterPanelContent
+        Context c = new Context();
         public ActionResult MyContent()
         {
-            Context c = new Context();
             string p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).
                 Select(y=>y.WriterID).FirstOrDefault();
             var contenvalues = contentManager.GetListByWriterID(writeridinfo);
             return View(contenvalues);
         }
-
+        [HttpGet]
+        public ActionResult AddContent(int id)
+        {
+            ViewBag.d = id;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddContent(Content p)
+        {
+            string mail = (string)Session["WriterMail"];
+            var writeridinfo = c.Writers.Where(x => x.WriterMail == mail).
+                Select(y => y.WriterID).FirstOrDefault();
+            p.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.WriterID = writeridinfo;
+            p.ContentStatus = true;
+            contentManager.ContentAdd(p);
+            return RedirectToAction("MyContent");
+        }
+        public ActionResult ToDoList()
+        {
+            return View();
+        }
     }
 }
